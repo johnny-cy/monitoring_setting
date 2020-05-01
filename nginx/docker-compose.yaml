@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  nginx: # 服務名稱
+    environment: # 環境變數
+      LANG: C.UTF-8 
+    image: nginx:alpine # 使用鏡像
+    #container_name: nginx # 容器名稱
+    volumes:
+      - ./workspace/conf.d:/etc/nginx/conf.d/ # 將本目錄綁定/workspace
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: host
+      - target: 443
+        published: 443
+        protocol: tcp
+        mode: host
+
+    networks:
+      - network_nginx
+
+        
+networks:
+  network_nginx:
+    name: network_nginx
+    driver: overlay
+    attachable: true
+
+
+x-settings:
+  deploy:
+    stack_name: nginx
+    enable: true
+    priority: "100"
