@@ -1,0 +1,2 @@
+# monitoring_setting
+Monitoring a server by using prometheus, node_exporter and grafana. Using nginx for web serving. These are here for practicing with ARM64 processor built on raspberry pi 4 and can be easily started by docker-utill.sh, a shell script for starting stacks each by each. Requirements are docker, docker-compose, yq (install via snap or apt, not from pip). Once the requirements are set, you are pretty close to have a beautiful monitoring dashboard to use.    
