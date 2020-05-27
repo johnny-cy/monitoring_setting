@@ -25,6 +25,7 @@ services:
       - '9090:9090'
     networks:
       - network_nginx
+    user: '0:0'
 
   grafana:
     image: grafana/grafana:6.7.1-ubuntu # for arm64
