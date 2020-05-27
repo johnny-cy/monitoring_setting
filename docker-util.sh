@@ -14,7 +14,7 @@ usage() {
 
 
 _get_enabled_stack() {
-    compose_files=$(find . -name docker-compose.yaml)
+    compose_files=$(find . -name docker-compose.yml)
     for f in $compose_files
     do
         enabled=$(yq read $f x-settings.deploy.enable)
